@@ -10,8 +10,18 @@ let Tenis = document.querySelector(".img-tenis");
 //  e por isso utiliza o ponto no começo , pois mão é uma tag html.
 
 function mudarvisual(cor, imagem) {
+  Tenis.classList.add("troca-efeito");
+  //adicionando uma classe do css no html pelo js
+
   body.style.background = cor;
-  Tenis.src = imagem;
+
+  setTimeout(() => {
+    Tenis.src = imagem;
+    //trocar imagem do tenis
+    Tenis.classList.remove("troca-efeito");
+  }, 500);
+  //lembrese , 1000 equivale a 1 segundo , pois, ele conta em milesegundo
+  //Isso é um contador de tempo.
 }
 // criei uma função e dei o nome de mudar visual . entre parêntese dei um nome de cor ,
 //  pq ele está pegando o conteúdo que está entre parênte no meu html com a função onclik ,
